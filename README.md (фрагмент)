@@ -1,0 +1,23 @@
+# Web Python Env (Codespaces/Gitpod)
+
+
+**Запуск в браузере**
+
+
+### Вариант A — GitHub Codespaces
+1. Создай новый репозиторий и залей этот каркас.
+2. Нажми `Code` → `Create codespace on main`.
+3. Дождись postCreate — зависимости подтянутся автоматически.
+4. Запусти локально API: `make run`. Codespaces откроет превью на 8000.
+
+
+### Вариант B — Gitpod
+1. Импортируй репозиторий в Gitpod.
+2. Gitpod выполнит шаги из `.gitpod.yml` и откроет превью на 8000.
+
+
+**Проверка**
+- Тесты: `make test`
+- Линтеры: `make lint`
+- Форматирование: `make fmt`
+- API: открой `/` — должен вернуть `{ "status": "ok" }`.
