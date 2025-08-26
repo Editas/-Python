@@ -1,0 +1,19 @@
+image: mcr.microsoft.com/devcontainers/python:3.11-bookworm
+ports:
+- port: 8000
+onOpen: open-preview
+tasks:
+- name: Setup
+init: |
+pip install --upgrade pip poetry
+poetry config virtualenvs.create false
+poetry install
+pre-commit install || true
+command: |
+make test || true
+make run
+vscode:
+extensions:
+- ms-python.python
+- ms-python.vscode-pylance
+- charliermarsh.ruff
