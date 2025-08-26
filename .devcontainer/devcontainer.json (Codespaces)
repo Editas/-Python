@@ -1,0 +1,25 @@
+# -Python
+{
+"name": "python-web-env",
+"image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+"features": {
+"ghcr.io/devcontainers/features/git:1": {},
+"ghcr.io/devcontainers/features/common-utils:2": {}
+},
+"customizations": {
+"vscode": {
+"extensions": [
+"ms-python.python",
+"ms-python.vscode-pylance",
+"charliermarsh.ruff",
+"ms-azuretools.vscode-docker",
+"github.vscode-github-actions"
+]
+}
+},
+"postCreateCommand": "pip install --upgrade pip poetry && poetry config virtualenvs.create false && poetry install && pre-commit install",
+"forwardPorts": [8000],
+"portsAttributes": {
+"8000": { "label": "API", "onAutoForward": "openPreview" }
+}
+}
